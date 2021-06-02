@@ -1,0 +1,130 @@
+:root {
+  --background: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--background);
+  font-size: 20px;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100px;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  opacity: 0;
+  padding-top: 1rem;
+  width: 176px;
+}
+
+.header__logo img {
+  width: 100%;
+  padding-right: 8%;
+}
+
+.header__left,
+.header__right {
+  flex-grow: 1;
+}
+
+.large-logo-container {
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  z-index: 1;
+  height: 100vh;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.large-logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  padding-right: 8%;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.hero__pin {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 50px 10vw;
+}
+
+.hero__image {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  object-fit: contain;
+}
+
+.hero__image:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.hero__image:nth-child(1),
+.hero__image:nth-child(5) {
+  height: 430px;
+  padding-left: 1vw;
+}
+
+.hero__image:nth-child(2),
+.hero__image:nth-child(6) {
+  z-index: 0;
+  height: 292px;
+  padding-left: 10vw;
+}
+
+.hero__image:nth-child(3),
+.hero__image:nth-child(7) {
+  z-index: 0;
+}
+
+.hero__image:nth-child(3),
+.hero__image:nth-child(4),
+.hero__image:nth-child(7),
+.hero__image:nth-child(8) {
+  height: 284px;
+  padding-left: 12vw;
+}
+
+.hero__image:first-child {
+  padding-left: 0;
+}
