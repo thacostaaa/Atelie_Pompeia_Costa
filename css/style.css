@@ -5,6 +5,7 @@
   --rosa: hsl(6deg 31% 81%);
   --roxo: hsl(314deg 32% 24%);
   --inicioPaddingTopo: 50px;
+  --logoEspacoTopo: 20px;
   --logoWidth: 200px;
   --logoFundoMaxHeight: calc(97vh - var(--inicioPaddingTopo));
   --corSombra1: hsl(0deg 0% 1% / 10%);
@@ -64,7 +65,7 @@ img {
   flex-grow: 0;
   flex-shrink: 0;
   opacity: 0;
-  margin-top: 17px;
+  margin-top: var(--logoEspacoTopo);
   width: var(--logoWidth);
   pointer-events: initial;
 }
@@ -161,7 +162,7 @@ img {
 
 .fundo-inicio {
   position: absolute;
-  top: 1rem;
+  top: var(--logoEspacoTopo);
   left: 0;
   z-index: 1;
   display: flex;
