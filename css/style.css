@@ -5,6 +5,7 @@
   --rosa: hsl(6deg 31% 81%);
   --roxo: hsl(314deg 32% 24%);
   --inicioPaddingTopo: 50px;
+  --logoWidth: 200px;
   --logoFundoMaxHeight: calc(97vh - var(--inicioPaddingTopo));
   --corSombra1: hsl(0deg 0% 1% / 10%);
   --corSombra2: hsl(0deg 0% 1% / 5%);
@@ -63,12 +64,13 @@ img {
   flex-grow: 0;
   flex-shrink: 0;
   opacity: 0;
-  padding-top: 1rem;
-  width: 176px;
+  margin-top: 17px;
+  width: var(--logoWidth);
   pointer-events: initial;
 }
 
 .cabecalho__logo img {
+  display: block;
   width: 100%;
   pointer-events: none;
 }

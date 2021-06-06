@@ -54,7 +54,7 @@
         });
 
         timeline1.to(logoFundo, {
-                width: '176px',
+                width: getDocStylePropValue('--logoWidth'),
                 y: -converterPxEmInt(getDocStylePropValue('--inicioPaddingTopo')),
             }, 'logo')
             .to('html', { '--fundo': getDocStylePropValue('--rosa') }, 'logo');
