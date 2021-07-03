@@ -3,9 +3,12 @@
 :root {
   --escuro: hsl(0deg 0% 11%);
   --cinza: hsl(6deg 14% 96%);
+  --cinzaClaro: hsl(160, 14%, 96%);
   --rosa: hsl(6deg 31% 81%);
   --roxo: hsl(314deg 32% 24%);
+  --roxoClaro: hsl(295deg, 18%, 37%);
   --verde: hsl(155deg 15% 75%);
+  --containerWidth: 1280px;
   --paddingConteudo: 60px;
   --inicioPaddingTopo: 50px;
   --logoEspacoTopo: 20px;
@@ -39,7 +42,8 @@ body {
 section {
   width: 100%;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
 img {
@@ -53,7 +57,7 @@ img {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: var(--containerWidth);
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -219,10 +223,6 @@ img {
   box-shadow: var(--sombra2);
 }
 
-.bordados {
-  min-height: 0;
-}
-
 .tipo-de-bordado {
   position: relative;
   flex-grow: 1;
@@ -257,6 +257,43 @@ img {
   text-transform: uppercase;
 }
 
+.contato {
+  overflow: hidden;
+  background-color: var(--rosa);
+}
+
+.contato a {
+  color: var(--cinzaClaro);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contato a:hover {
+  text-decoration: underline;
+}
+
+.contato p {
+  margin-bottom: 20px;
+}
+
+.contato__direita {
+  background-color: var(--roxoClaro);
+  color: var(--cinzaClaro);
+}
+
+.contato__siga-nos {
+  text-transform: uppercase;
+}
+
+.rodape {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: var(--verde);
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 @media (min-width: 640px) {
   .conteudo {
     padding: var(--paddingConteudo) 0 var(--paddingConteudo) var(--paddingConteudo);
@@ -287,6 +324,42 @@ img {
 
   .tipo-de-bordado:last-child {
     margin-top: 50px;
+  }
+
+  .contato {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .contato .container {
+    width: 100%;
+    max-width: calc(var(--containerWidth) / 2);
+    margin: 0;
+  }
+
+  .contato__esquerda,
+  .contato__direita {
+    display: flex;
+    width: 50%;
+    padding-top: 150px;
+  }
+
+  .contato__esquerda {
+    justify-content: flex-end;
+  }
+
+  .contato__direita {
+    justify-content: flex-start;
+  }
+
+  .contato__esquerda .conteudo,
+  .contato__direita .conteudo {
+    padding-right: var(--paddingConteudo);
+  }
+
+  .contato__direita .conteudo {
+    margin-top: 80px;
   }
 }
 
