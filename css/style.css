@@ -16,9 +16,6 @@
   --logoFundoMaxHeight: calc(97vh - var(--inicioPaddingTopo));
   --corSombra1: hsl(0deg 0% 1% / 10%);
   --corSombra2: hsl(0deg 0% 1% / 5%);
-  --sm: 640px;
-  --md: 768px;
-  --lg: 1024px;
   --tempoAnimacaoBotaoMobille: 0.8s;
   
   --fundo: var(--cinza);
