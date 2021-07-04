@@ -11,7 +11,13 @@
 
     var scroller = new LocomotiveScroll({
         el: pageContainer,
-        smooth: true
+        smooth: true,
+        smartphone: {
+            smooth: true,
+        },
+        tablet: {
+            smooth: true,
+        },
     });
 
     scroller.on('scroll', ScrollTrigger.update);
