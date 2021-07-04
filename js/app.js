@@ -3,6 +3,8 @@
 
     var pageContainer = document.querySelector('[data-scroll-container]');
     var logoCabecalho = document.querySelector('.cabecalho__logo');
+    var menuPrincipal = document.querySelector('.menu--principal');
+    var botaoMenuMobile = document.querySelector('.botaoMenu');
     var logoFundo = document.querySelector('.fundo-inicio__imagem');
     var secaoInicio = document.querySelector('.inicio');
     var secaoBordados = document.querySelector('.bordados');
@@ -19,7 +21,7 @@
             return arguments.length
                 ? scroller.scrollTo(value, 0, 0)
                 : scroller.scroll.instance.scroll.y;
-            },
+        },
         getBoundingClientRect() {
             return {
                 left: 0,
@@ -54,9 +56,9 @@
         });
 
         timeline1.to(logoFundo, {
-                width: getDocStylePropValue('--logoWidth'),
-                y: -converterPxEmInt(getDocStylePropValue('--inicioPaddingTopo')),
-            }, 'logo')
+            width: getDocStylePropValue('--logoWidth'),
+            y: -converterPxEmInt(getDocStylePropValue('--inicioPaddingTopo')),
+        }, 'logo')
             .to('html', { '--fundo': getDocStylePropValue('--rosa') }, 'logo');
 
         var timeline2 = gsap.timeline({
@@ -96,7 +98,7 @@
         ScrollTrigger.refresh();
     });
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         ScrollTrigger.refresh();
     });
 
@@ -105,14 +107,22 @@
     var clickScrollTo = function (event) {
         event.preventDefault();
 
-        var section = document.querySelector(event.target.getAttribute('href'))
+        var section = document.querySelector(event.target.getAttribute('href'));
+
+        menuPrincipal.classList.remove('aberto');
+        botaoMenuMobile.classList.remove('aberto');
 
         scroller.scrollTo(section);
     };
 
     logoCabecalho.addEventListener('click', clickScrollTo);
 
-    menuLinks.forEach(function(link) {
+    menuLinks.forEach(function (link) {
         link.addEventListener('click', clickScrollTo);
+    });
+
+    botaoMenuMobile.addEventListener('click', function () {
+        botaoMenuMobile.classList.toggle('aberto');
+        menuPrincipal.classList.toggle('aberto');
     });
 })();
