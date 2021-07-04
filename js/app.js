@@ -12,6 +12,7 @@
     var scroller = new LocomotiveScroll({
         el: pageContainer,
         smooth: true,
+        smoothMobile: 1,
         smartphone: {
             smooth: true,
         },
